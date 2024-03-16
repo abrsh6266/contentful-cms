@@ -1,16 +1,14 @@
 import React from "react";
-//import { useFetchProjects } from "./fetchProjects";
-import { projects } from "./data";
+import { useFetchProjects } from "./fetchProjects";
 const Projects = () => {
-  //const { project, loading } = useFetchProjects();
-  //   console.log(loading);
-  //   if (loading)
-  //     return (
-  //       <section className="projects">
-  //         <h2>Loading...</h2>
-  //       </section>
-  //     );
-  //     else
+  const { project, loading } = useFetchProjects();
+  console.log(loading);
+  if (loading)
+    return (
+      <section className="projects">
+        <h2>Loading...</h2>
+      </section>
+    );
   return (
     <section className="projects">
       <div className="title">
@@ -18,16 +16,17 @@ const Projects = () => {
         <div className="title-underline"></div>
       </div>
       <div className="projects-center">
-        {projects.map((project, id) => {
-          const { image, url, title } = project;
+        {project.map((project) => {
+          const { id, img, url, title } = project;
           return (
-            <a 
-            key={id} 
-            href={url} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="project">
-              <img src={image} alt={title} className="img" />
+            <a
+              key={id}
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="project"
+            >
+              <img src={img} alt={title} className="img" />
               <h5>{title}</h5>
             </a>
           );
@@ -35,7 +34,6 @@ const Projects = () => {
       </div>
     </section>
   );
-  return <div>Projects</div>;
 };
 
 export default Projects;

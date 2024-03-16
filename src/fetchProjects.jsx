@@ -2,7 +2,7 @@ import { createClient } from "contentful";
 import { useEffect, useState } from "react";
 
 const client = createClient({
-  space: import.meta.env.SPACE,
+  space: "tqi0heiq6iuh",
   environment: "master",
   accessToken: import.meta.env.VITE_API_KEY,
 });
@@ -13,8 +13,9 @@ export const useFetchProjects = () => {
   const getData = async () => {
     try {
       const { items } = await client.getEntries({ content_type: "projects" });
+      console.log(items);
       const project = items.map((item) => {
-        const { image, url, title } = item;
+        const { image, url, title } = item.fields;
         const id = item.sys.id;
         const img = image?.fields?.file?.url;
         return { id, img, url, title };

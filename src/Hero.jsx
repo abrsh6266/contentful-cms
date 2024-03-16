@@ -1,21 +1,27 @@
-import React from 'react'
-import heroImg  from './assets/hero2.svg'
+import React from "react";
+import heroImg from "./assets/hero2.svg";
 const Hero = () => {
   return (
-    <section className='hero'>
-        <div className="hero-center">
-            <div className="hero-title">
-                <h1>Contentful CMS</h1>
-                <p>
-                Hoodie solarpunk gastropub cred occupy food truck cloud bread succulents jianbing Brooklyn fam cold-pressed waistcoat. Cornhole 3 wolf moon aesthetic freegan polaroid cred godard you probably haven't heard of them etsy. Schlitz waistcoat tumeric quinoa raw denim. Fam disrupt readymade snackwave squid godard yuccie 8-bit next level kale chips.
-                </p>
-            </div>
-            <div className="img-container">
-                <img src={heroImg} alt="woman and browser" className='img'/>
-            </div>
+    <section className="hero">
+      <div className="hero-center">
+        <div className="hero-title">
+          <h1>Explore My Web Creations</h1>
+          <p>
+            Welcome to my portfolio of web creations! Explore a diverse range of
+            websites I've crafted with care and creativity. From sleek and
+            modern designs to quirky and innovative interfaces, each site
+            showcases my dedication to quality and user experience. Whether
+            you're seeking inspiration or browsing for potential collaborations,
+            you'll find a variety of projects here to spark your interest. Dive
+            in and discover the world of possibilities that await!
+          </p>
         </div>
+        <div className="img-container">
+          <img src={heroImg} alt="woman and browser" className="img" />
+        </div>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
